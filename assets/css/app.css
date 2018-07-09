@@ -1,0 +1,104 @@
+body {
+	margin: 0;
+}
+
+img {
+	width: 500px;
+	max-width: 90%;
+}
+
+
+
+.layoutCenter {
+	text-align: center;
+}
+.layoutLeft {
+	text-align: left;
+}
+
+
+
+.fontSansSerif {
+	font-family: sans-serif;
+	font-weight: 100;
+}
+.fontMonoSpace {
+	font-family: monospace;
+}
+
+
+
+.imageText {
+}
+
+
+
+.fontSizeXXXSml {
+	font-size: 10px;
+}
+.fontSizeXXSml {
+	font-size: 12.5px;
+}
+.fontSizeXSml {
+	font-size: 15px;
+}
+.fontSizeSml {
+	font-size: 17.5px;
+}
+.fontSizeMed {
+	font-size: 22.5px;
+}
+.fontSizeLrg {
+	font-size: 30px;
+}
+.fontSizeXLrg {
+	font-size: 40px;
+}
+
+
+
+.marginSml {
+	margin: 7.5px 11px 7.5px;
+}
+.marginMed {
+	margin: 15px 25px 15px;
+}
+.marginLrg {
+	margin: 25px 37.5px 25px;
+}
+
+.fas.fa-paint-roller {
+	float: right;
+	opacity: .4;
+}
+.fas.fa-paint-roller:hover {
+	opacity: .6;
+}
+
+
+#container {
+	margin: 3% 0 10% 0;
+}
+#editGearClosed .fas.fa-paint-roller {
+	opacity: .07;
+	margin: -20px 5px 5px 5px;
+	transition: .15s;
+}
+#editGearClosed .fas.fa-paint-roller:hover {
+	opacity: .25;
+	margin: -20px 5px 5px 5px;
+	transition: .1s;
+}
+#editContainer {
+	margin: 0;
+	padding: 15px 20px 30px;
+	line-height: 25px;
+	background-color: rgba(0,0,0,0.03);
+}
+#imagePreview {
+	width: 20px;
+}
+#editExplainer {
+	float: right;
+	margin-top: 5px;
+}
