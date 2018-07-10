@@ -14,10 +14,12 @@ var loadFile = function(i) {
 };
 
 
-// --------------- Script ------------------------------------------------------
+// --------------- script ------------------------------------------------------
 
 
 $("#imagePreview").hide()
+
+$("#editContainer").hide()
 
 $("#editExplainer").on("click", function(){
   $("#editContainer").fadeToggle(0);
@@ -28,12 +30,31 @@ $("#toggleLayoutButton").on("click", function(){
   $("#container").toggleClass("layoutCenter");
 })
 
-$("html").keypress(function(k){
-  if(k.keyCode == 27) {
-    $("#editContainer").fadeToggle(0);
-    $("#editExplainer").show();
-  }
+$(document).dblclick(function(){
+  $("#editContainer").fadeToggle(0);
+  $("#editExplainer").show();
 })
+
+// $(document).keypress(function(k){
+//   if(k.keyCode == 27) {
+//     $("#editContainer").fadeToggle(0);
+//     $("#editExplainer").show();
+//   }
+// })
+
+// $("html").keypress(function(k){
+//   if(k.keyCode == 27) {
+//     $("#editContainer").fadeToggle(0);
+//     $("#editExplainer").show();
+//   }
+// })
+
+// $("html").keypress(function(k){
+//   if(k.keyCode == 69) {
+//     $("#editContainer").fadeToggle(0);
+//     $("#editExplainer").show();
+//   }
+// })
 
 $(".fas.fa-paint-roller").click(function(){
   $("#editContainer").fadeToggle(0);
@@ -73,6 +94,10 @@ $("#toggleTextSizeButton").click(function(){
   cycleTextSize();
 })
 
+$(".notAvailable").click(function(){
+  alert("function not available");
+})
+
 // $("#imageInput").keypress(function(k){
 //   if(k.which === 13){
 //     addContent();
@@ -80,7 +105,7 @@ $("#toggleTextSizeButton").click(function(){
 // })
 
 
-// --------------- Functions ------------------------------------------------------
+// --------------- funtions ------------------------------------------------------
 
 
 function titleUpdate() {

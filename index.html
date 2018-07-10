@@ -5,29 +5,65 @@
 	<link class="favicon" rel="shortcut icon" type="image/jpg" href="assets/images/favicon01.png">
 	<link rel="stylesheet" type="text/css" href="assets/css/app.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
+
+
+<!-- ––––––––––––––– editor content –––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+
 	<!-- <button id="editButton">Edit</button> -->
 	<div id="editContainer" class="layoutLeft">
+
+<!-- 			<div class="editSpacer">add image</div>
+ -->
 		<img id="imagePreview"/>
 		<input id="imageInput" type="file" onchange="loadFile(event)"></input>
-		<button id="editExplainer">use (esc) key to open / close editor</button>
-		<br>
+		<button id="editExplainer">use (double-click) to open / close editor</button>
+			
+			<br>
+	
 		<input id="newTextInput" type="text" placeholder="   New image text...">
-		<button id="addButton">Add Image / Text</button><br>
+		<button id="addButton">Add Image / Text</button>
+		<button class="notAvailable" id="saveButton">save changes</button>
+			
+			<div class="editSpacer"><!-- change title --></div>
+	
 		<input id="editTitleInput" type="text" placeholder="   Change title text...">
-		<button id="editTitleButton">Update Title</button><br>
+		<button id="editTitleButton">Update Title</button>
+			
+			<div class="editSpacer"><!-- change formatting --></div>
+	
+		<button class="notAvailable">Image Size</button>
+		<button class="notAvailable">Image Spacing</button>
+		<button class="notAvailable">Top Spacing</button>
+		<button class="notAvailable">Margin Spacing</button>
+			
+			<br>
+	
 		<button id="toggleLayoutButton">Toggle Layout</button>
 		<button id="toggleFontButton">Toggle Font</button>
 		<button id="toggleTitleSizeButton">Title Size</button>
 		<button id="toggleTextSizeButton">Text Size</button>
+
 	</div>	
+
+
+<!-- ––––––––––––––– user content –––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+
 	<div id="container" class="layoutCenter">
 		<div class="titleText marginLrg">new website</div>
 		<div id="userContainer" class="marginSml">
 		</div>
 	</div>
+
+
+<!-- ––––––––––––––– end markup –––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+
 	<script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 </html>
