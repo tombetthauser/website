@@ -64,7 +64,7 @@ hr {
 .fontSizeXLrg {
 	font-size: 40px;
 }
-.marginSml {
+/*.marginSml {
 	margin: 7.5px 11px 7.5px;
 }
 .marginMed {
@@ -72,8 +72,43 @@ hr {
 }
 .marginLrg {
 	margin: 25px 37.5px 25px;
+}*/
+.marginTopSml {
+	padding-top: 0px;
 }
-
+.marginTopMed {
+	padding-top: 5px;
+}
+.marginTopLrg {
+	padding-top: 40px;
+}
+.marginLeftSml {
+	padding-left: 0px;
+}
+.marginLeftMed {
+	padding-left: 50px;
+}
+.marginLeftLrg {
+	padding-left: 100px;
+}
+.marginImageSml {
+	padding-top: 15px;
+}
+.marginImageMed {
+	padding-top: 25px;
+}
+.marginImageLrg {
+	padding-top: 35px;
+}
+.marginTextSml {
+	padding-top: 15px;
+}
+.marginTextMed {
+	padding-top: 25px;
+}
+.marginTextLrg {
+	padding-top: 35px;
+}
 
 /* --------------- multiple classes ------------------------------------------------------ */
 

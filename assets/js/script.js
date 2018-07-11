@@ -4,6 +4,10 @@ var editOpen = true
 
 var fontTitleSize = 1
 var fontTextSize = 2
+var marginTop = 0
+var marginLeft = 0
+var marginImage = 0
+var marginText = 0
 
 var userImage = ""
 
@@ -76,6 +80,22 @@ $("#editTitleInput").keypress(function(k){
   if(k.which === 13){
     titleUpdate();
   }
+})
+
+$("#marginText").on("click", function(){
+  cycleMarginText();
+})
+
+$("#marginImage").on("click", function(){
+  cycleMarginImage();
+})
+
+$("#marginLeft").on("click", function(){
+  cycleMarginLeft();
+})
+
+$("#marginTop").on("click", function(){
+  cycleMarginTop();
 })
 
 $("#toggleFontButton").on("click", function(){
@@ -185,17 +205,96 @@ function cycleTextSize() {
   };
 }
 
+function cycleMarginTop() {
+  if(marginTop === 2){
+    marginTop = 0;
+  } else {
+  marginTop++;
+  };
+  if (marginTop === 1) {
+    $("#container").removeClass("marginTopSml marginTopMed marginTopLrg");
+    $("#container").addClass("marginTopMed");
+  } else if (marginTop === 2) {
+    $("#container").removeClass("marginTopSml marginTopMed marginTopLrg");
+    $("#container").addClass("marginTopLrg");
+  } else {
+    $("#container").removeClass("marginTopSml marginTopMed marginTopLrg");
+    $("#container").addClass("marginTopSml");
+  };
+}
+
+function cycleMarginLeft() {
+  if(marginLeft === 2){
+    marginLeft = 0;
+  } else {
+  marginLeft++;
+  };
+  if (marginLeft === 1) {
+    $("#container").removeClass("marginLeftSml marginLeftMed marginLeftLrg");
+    $("#container").addClass("marginLeftMed");
+  } else if (marginLeft === 2) {
+    $("#container").removeClass("marginLeftSml marginLeftMed marginLeftLrg");
+    $("#container").addClass("marginLeftLrg");
+  } else {
+    $("#container").removeClass("marginLeftSml marginLeftMed marginLeftLrg");
+    $("#container").addClass("marginLeftSml");
+  };
+}
+
+function cycleMarginImage() {
+  if(marginImage === 2){
+    marginImage = 0;
+  } else {
+  marginImage++;
+  };
+  if (marginImage === 1) {
+    $("img").removeClass("marginImageSml marginImageMed marginImageLrg");
+    $("img").addClass("marginImageMed");
+  } else if (marginImage === 2) {
+    $("img").removeClass("marginImageSml marginImageMed marginImageLrg");
+    $("img").addClass("marginImageLrg");
+  } else {
+    $("img").removeClass("marginImageSml marginImageMed marginImageLrg");
+    $("img").addClass("marginImageSml");
+  };
+}
+
+function cycleMarginText() {
+  if(marginText === 2){
+    marginText = 0;
+  } else {
+  marginText++;
+  };
+  if (marginText === 1) {
+    $(".imageText").removeClass("marginTextSml marginTextMed marginTextLrg");
+    $(".imageText").addClass("marginTextMed");
+  } else if (marginImage === 2) {
+    $(".imageText").removeClass("marginTextSml marginTextMed marginTextLrg");
+    $(".imageText").addClass("marginTextLrg");
+  } else {
+    $(".imageText").removeClass("marginTextSml marginTextMed marginTextLrg");
+    $(".imageText").addClass("marginTextSml");
+  };
+}
+
 function addContent() {
   var newText = $("#newTextInput").val();
   // $("#newTextInput").val("");
   // $("#imageInput").val("");
   $("input").val("");
   $("#userContainer").prepend(
-      "<img class='marginSml' src="
+      "<img class='marginImageSml' src="
     + "\'" + userImage + "\'"
-    + "><div class='imageText marginSml fontSizeXSml'>"
+    + "><div class='imageText fontSizeXSml marginTextSml'>"
     // + "<button class='edit'><span class='trash'><i class='far fa-trash-alt'></i></span></button>"
     + newText
     + "</div>"
   ) 
+  cycleMarginImage();
+  cycleMarginImage();
+  cycleMarginImage();
+  
+  cycleMarginText();
+  cycleMarginText();
+  cycleMarginText();
 }
