@@ -25,8 +25,35 @@ $("#imagePreview").hide()
 
 $("#editContainer").hide()
 
+$(".delete").hide()
+
+
+
+
+
+
+
+
+$("button.delete").on("click", function(event){
+  $(this).parent().fadeOut(0,function(){
+    $(this).remove();
+  });
+  event.stopPropagation();
+});
+
+
+
+
+
+
+
+
+
+
+
 $("#editExplainer").on("click", function(){
   $("#editContainer").fadeToggle(0);
+  $(".delete").fadeToggle(0);
   $("#editExplainer").hide();
 })
 
@@ -36,7 +63,16 @@ $("#toggleLayoutButton").on("click", function(){
 
 $(document).dblclick(function(){
   $("#editContainer").fadeToggle(0);
+  $(".delete").fadeToggle(0);
   $("#editExplainer").show();
+})
+
+$(document).keypress(function(k){
+  if (k.keyCode === 27) {
+    $("#editContainer").fadeToggle(0);
+    $(".delete").fadeToggle(0);
+    $("#editExplainer").show();
+  }
 })
 
 // $(document).keypress(function(k){
@@ -248,14 +284,14 @@ function cycleMarginImage() {
   marginImage++;
   };
   if (marginImage === 1) {
-    $("img").removeClass("marginImageSml marginImageMed marginImageLrg");
-    $("img").addClass("marginImageMed");
+    $(".imageDiv").removeClass("marginImageSml marginImageMed marginImageLrg");
+    $(".imageDiv").addClass("marginImageMed");
   } else if (marginImage === 2) {
-    $("img").removeClass("marginImageSml marginImageMed marginImageLrg");
-    $("img").addClass("marginImageLrg");
+    $(".imageDiv").removeClass("marginImageSml marginImageMed marginImageLrg");
+    $(".imageDiv").addClass("marginImageLrg");
   } else {
-    $("img").removeClass("marginImageSml marginImageMed marginImageLrg");
-    $("img").addClass("marginImageSml");
+    $(".imageDiv").removeClass("marginImageSml marginImageMed marginImageLrg");
+    $(".imageDiv").addClass("marginImageSml");
   };
 }
 
@@ -283,13 +319,25 @@ function addContent() {
   // $("#imageInput").val("");
   $("input").val("");
   $("#userContainer").prepend(
-      "<img class='marginImageSml' src="
-    + "\'" + userImage + "\'"
-    + "><div class='imageText fontSizeXSml marginTextSml'>"
-    // + "<button class='edit'><span class='trash'><i class='far fa-trash-alt'></i></span></button>"
+
+    "<div class='imageDiv marginImageSml'>"
+    + "<img src='"
+    + userImage
+    + "'><button class='delete'>delete</button>"
+    + "<div class='imageText fontSizeXSml marginTextSml'>"
     + newText
-    + "</div>"
+    + "</div></div>"
+
+    //   "<img class='marginImageSml' src="
+    // + "\'" + userImage + "\'"
+    // + "><div class='imageText fontSizeXSml marginTextSml'>"
+    // // + "<button class='edit'><span class='trash'><i class='far fa-trash-alt'></i></span></button>"
+    // + newText
+    // + "</div>"
   ) 
+
+  $(".delete").show()
+
   cycleMarginImage();
   cycleMarginImage();
   cycleMarginImage();

@@ -16,6 +16,16 @@ hr {
 /* ––––––––––––––– single classes –––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 
+
+
+
+.delete {
+	vertical-align: top;
+	margin-left: -70px;	
+	margin-top: 3px;
+	/*box-shadow: 1px 1px 2px black;*/
+}
+
 .editSpacer {
 	color: grey;
 	font-size: 12px;
