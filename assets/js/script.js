@@ -27,29 +27,9 @@ $("#editContainer").hide()
 
 $(".delete").hide()
 
-
-
-
-
-
-
-
-$("button.delete").on("click", function(event){
-  $(this).parent().fadeOut(0,function(){
-    $(this).remove();
-  });
-  event.stopPropagation();
+$(document).on("click", ".delete", function(){
+  $(this).parent().remove();
 });
-
-
-
-
-
-
-
-
-
-
 
 $("#editExplainer").on("click", function(){
   $("#editContainer").fadeToggle(0);
@@ -70,27 +50,6 @@ $(document).keypress(function(k){
     editToggle();
   }
 })
-
-// $(document).keypress(function(k){
-//   if(k.keyCode == 27) {
-//     $("#editContainer").fadeToggle(0);
-//     $("#editExplainer").show();
-//   }
-// })
-
-// $("html").keypress(function(k){
-//   if(k.keyCode == 27) {
-//     $("#editContainer").fadeToggle(0);
-//     $("#editExplainer").show();
-//   }
-// })
-
-// $("html").keypress(function(k){
-//   if(k.keyCode == 69) {
-//     $("#editContainer").fadeToggle(0);
-//     $("#editExplainer").show();
-//   }
-// })
 
 $(".fas.fa-paint-roller").click(function(){
   $("#editContainer").fadeToggle(0);
@@ -317,11 +276,8 @@ function cycleMarginText() {
 
 function addContent() {
   var newText = $("#newTextInput").val();
-  // $("#newTextInput").val("");
-  // $("#imageInput").val("");
   $("input").val("");
   $("#userContainer").prepend(
-
     "<div class='imageDiv marginImageSml'>"
     + "<img src='"
     + userImage
@@ -329,13 +285,6 @@ function addContent() {
     + "<div class='imageText fontSizeXSml marginTextSml'>"
     + newText
     + "</div></div>"
-
-    //   "<img class='marginImageSml' src="
-    // + "\'" + userImage + "\'"
-    // + "><div class='imageText fontSizeXSml marginTextSml'>"
-    // // + "<button class='edit'><span class='trash'><i class='far fa-trash-alt'></i></span></button>"
-    // + newText
-    // + "</div>"
   ) 
 
   $(".delete").show()
