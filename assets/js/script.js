@@ -279,9 +279,14 @@ function addContent() {
   $("input").val("");
   $("#userContainer").prepend(
     "<div class='imageDiv marginImageSml'>"
+    + "<a href='"
+    + userImage
+    + "'>"
     + "<img src='"
     + userImage
-    + "'><button class='delete'>delete</button>"
+    + "'>"
+    + "</a>"
+    + "<button class='delete'>delete</button>"
     + "<div class='imageText fontSizeXSml marginTextSml'>"
     + newText
     + "</div></div>"
