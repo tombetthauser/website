@@ -62,16 +62,12 @@ $("#toggleLayoutButton").on("click", function(){
 })
 
 $(document).dblclick(function(){
-  $("#editContainer").fadeToggle(0);
-  $(".delete").fadeToggle(0);
-  $("#editExplainer").show();
+  editToggle();
 })
 
 $(document).keypress(function(k){
   if (k.keyCode === 27) {
-    $("#editContainer").fadeToggle(0);
-    $(".delete").fadeToggle(0);
-    $("#editExplainer").show();
+    editToggle();
   }
 })
 
@@ -163,6 +159,12 @@ $(".notAvailable").click(function(){
 
 // --------------- funtions ------------------------------------------------------
 
+
+function editToggle() {
+  $("#editContainer").fadeToggle(0);
+  $(".delete").fadeToggle(0);
+  $("#editExplainer").show();
+}
 
 function titleUpdate() {
   var newTitle = $("#editTitleInput").val();
